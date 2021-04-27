@@ -5,6 +5,7 @@ const userData = require("./userData.json");
 const postData = require("./postData.json");
 
 const seedDatabase = async () => {
+  // drops all tables before creating again
   await sequelize.sync({ force: true });
 
   const users = await User.bulkCreate(userData, {
